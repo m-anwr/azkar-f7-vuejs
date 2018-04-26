@@ -31,6 +31,12 @@ import store from './assets/vuex/storage.js'
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
 
+import VueTouch from 'vue-touch'
+Vue.use(VueTouch)
+VueTouch.config.swipe = {
+  direction: 'horizontal'
+}
+
 let theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];

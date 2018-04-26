@@ -10,7 +10,7 @@
         <f7-list class="components-list">
             <f7-list-item
               v-for="(zekr, index) in azkar"
-              :link="'/dynamic-route/blog/' + index + '/post/' + 0 + '/'"
+              :link="'/zekr/' + index + '/'"
               :key="zekr.name"
               :title="zekr.name"
               class="arabicfont"

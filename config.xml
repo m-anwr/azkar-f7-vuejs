@@ -6,10 +6,10 @@
     <hook src="hooks/beforedep.js" type="before_deploy" />
     <name>Azkar</name>
     <description>
-        Brand new cordova project!
+        Azkar App
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="mohammed.ahmed.anwer@gmail.com" href="mohamedanwer.wordpress.com">
+        Mohamed Anwer
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -22,6 +22,12 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon density="ldpi" src="res/android/azkar36.png" />
+        <icon density="mdpi" src="res/android/azkar48.png" />
+        <icon density="hdpi" src="res/android/azkar72.png" />
+        <icon density="xhdpi" src="res/android/azkar96.png" />
+        <icon density="xxhdpi" src="res/android/azkar144.png" />
+        <icon density="xxxhdpi" src="res/android/azkar192.png" />
     </platform>
     <platform name="ios">
         <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
