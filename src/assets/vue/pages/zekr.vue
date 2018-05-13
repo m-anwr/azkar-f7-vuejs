@@ -64,6 +64,10 @@ export default {
       {
         this.currCountDown += 1;
       }
+      if (this.remainingCount == 0)
+      {
+        this.next();
+      }
     },
     resetCount() {
       this.currCountDown = 0
