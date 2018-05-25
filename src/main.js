@@ -52,6 +52,9 @@ export default new Vue({
   // Root Element
   el: '#app',
   store,
+  beforeCreate() {
+		this.$store.commit('initialiseStore');
+	},
   render: c => c('app'),
   components: {
     app,
