@@ -5,6 +5,9 @@
                 <f7-link icon="fa fa-book"></f7-link>
             </f7-nav-left>
             <div class="title">أذكار</div>
+            <f7-nav-right>
+                <f7-link href="/settings/" icon="fa fa-gear"></f7-link>
+            </f7-nav-right>
         </f7-navbar>
         <f7-block-title class="arabicfont linehightone">قائمة الاذكار</f7-block-title>
         <f7-list class="components-list">

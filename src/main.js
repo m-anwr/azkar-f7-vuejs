@@ -28,6 +28,11 @@ import routes from './routes.js'
 // Import Vuex Storage
 import store from './assets/vuex/storage.js'
 
+store.subscribe((mutation, state) => {
+	// Store the state object as a JSON string
+	localStorage.setItem(state.version, JSON.stringify(state));
+});
+
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
 

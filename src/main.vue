@@ -23,10 +23,11 @@ export default {
 }
 
 .arabicfont {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
   font-family: "Naskh","Hafs","Adobe Arabic","Simplified Arabic","Traditional Arabic","Arabic Typesetting","Times New Roman","Tahoma","Arial","serif";
 }
+
 .padded {
   padding: 0 5px 0 5px;
 }

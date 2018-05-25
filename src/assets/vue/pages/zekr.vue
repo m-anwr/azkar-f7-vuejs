@@ -3,7 +3,7 @@
     <f7-navbar :title="currCollectionName" class="arabicfont" back-link="Back" sliding></f7-navbar>
     <div class="page" @click="decrease">
       <v-touch id="zekrp" class="page-content" v-on:swipeleft="previous" v-on:swiperight="next">
-        <f7-block inner class="arabicfont">
+        <f7-block inner :style="[this.$store.state.arabicfont]" >
           <p v-html="currZekr.body" class=""></p>
         </f7-block>
       </v-touch>
@@ -22,6 +22,11 @@ import azkarJson from "../../json/azkar.json"
 export default {
   data() {
     return {
+      arabicfont: {
+        fontSize: '28px',
+        fontWeight: 'bold',
+        fontFamily: '"Naskh","Hafs","Adobe Arabic","Simplified Arabic","Traditional Arabic","Arabic Typesetting","Times New Roman","Tahoma","Arial","serif"'
+      },
       azkar: azkarJson,
       currCollectionIndex: this.$f7route.params['zi'],
       currZekrIndex: 0,
@@ -66,6 +71,10 @@ export default {
       }
       if (this.remainingCount == 0)
       {
+        if (this.$store.state.vibrateWhenZekrCounterFinishes)
+        {
+					navigator.vibrate(150);
+        }
         this.next();
       }
     },

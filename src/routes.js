@@ -14,5 +14,9 @@ export default [
   {
     path: '/panel-left/',
     component: require('./assets/vue/pages/panel-left.vue')
+  },
+  {
+    path: '/settings/',
+    component: require('./assets/vue/pages/settings.vue')
   }
 ]
