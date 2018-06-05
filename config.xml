@@ -36,6 +36,6 @@
     </platform>
     <allow-navigation href="*" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
+    <engine name="android" spec="^7.1.0" />
     <engine name="browser" spec="^5.0.3" />
-    <engine name="android" spec="^7.0.0" />
 </widget>
