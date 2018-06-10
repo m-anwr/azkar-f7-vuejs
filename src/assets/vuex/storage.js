@@ -11,7 +11,8 @@ export default new Vuex.Store({
       fontWeight: 'bold',
       fontFamily: '"Naskh","Hafs","Adobe Arabic","Simplified Arabic","Traditional Arabic","Arabic Typesetting","Times New Roman","Tahoma","Arial","serif"'
     },
-    vibrateWhenZekrCounterFinishes: true
+    vibrateWhenZekrCounterFinishes: true,
+    MoveToNextZekrWhenZekrCounterFinishes: true
   },
 
   getters: {
@@ -26,6 +27,9 @@ export default new Vuex.Store({
     },
     vibrationToggled(state, checked) {
       state.vibrateWhenZekrCounterFinishes = checked
+    },
+    MoveToNextZekrWhenFinished(state, checked) {
+      state.MoveToNextZekrWhenZekrCounterFinishes = checked
     },
     initialiseStore(state) {
 			// Check if the ID exists
