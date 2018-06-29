@@ -34,6 +34,15 @@
            @change="countDownToggled"
 					></f7-toggle>
         </f7-list-item>
+        <f7-list-item>
+				  <div>
+            <f7-label> اﻹنتقال للذكر التالى عند إنتهاء العد</f7-label>
+					</div>
+					<f7-checkbox
+					 :checked="this.$store.state.MoveToNextZekrWhenZekrCounterFinishes"
+           @change="MoveToNextZekrWhenFinished"
+					></f7-checkbox>
+        </f7-list-item>
       </f7-list>
     </f7-page>
   </f7-page>
@@ -59,6 +68,9 @@
      },
      countDownToggled(e) {
        this.$store.commit('countDownToggled', e.target.checked)
+     },
+     MoveToNextZekrWhenFinished(e) {
+       this.$store.commit('MoveToNextZekrWhenFinished', e.target.checked)
      }
    }
   };

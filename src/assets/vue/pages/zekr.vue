@@ -81,7 +81,10 @@ export default {
         {
 					navigator.vibrate(150);
         }
-        this.next();
+        if (this.$store.state.MoveToNextZekrWhenZekrCounterFinishes)
+        {
+          this.next();
+        }
       }
     },
     resetCount() {
