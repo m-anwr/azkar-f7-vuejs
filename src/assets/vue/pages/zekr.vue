@@ -2,7 +2,7 @@
   <f7-page>
     <f7-navbar :title="currCollectionName" class="arabicfont" back-link="Back" sliding></f7-navbar>
     <div class="page" @click="decrease">
-      <v-touch id="zekrp" class="page-content" v-on:swipeleft="previous" v-on:swiperight="next" v-on:pinchout="incFont" v-on:pinchin="decFont">
+      <v-touch id="zekrp" class="page-content" v-on:swipeleft="previous" v-on:swiperight="next">
         <f7-block inner :style="[this.$store.state.arabicfont]" >
           <p v-html="currZekr.body" class=""></p>
         </f7-block>
