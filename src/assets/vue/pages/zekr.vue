@@ -2,7 +2,7 @@
   <f7-page>
     <f7-navbar :title="currCollectionName" class="arabicfont" back-link="Back" sliding></f7-navbar>
     <div class="page" @click="decrease">
-      <v-touch id="zekrp" class="page-content" v-on:swipeleft="previous" v-on:swiperight="next">
+      <v-touch id="zekrp" class="page-content" v-on:swipeleft="previous" v-on:swiperight="next" v-on:pinchout="incFont" v-on:pinchin="decFont">
         <f7-block inner :style="[this.$store.state.arabicfont]" >
           <p v-html="currZekr.body" class=""></p>
         </f7-block>
@@ -10,7 +10,7 @@
     </div>
     <f7-toolbar bottom-md>
       <f7-link @click="previous"><f7-icon f7="right"/><span>السابق</span></f7-link>
-      <f7-link @click="decrease"><f7-icon f7="reload"/> <span>{{ remainingCount }}</span></f7-link>
+      <f7-link @click="decrease"><f7-icon f7="reload"/> <span>{{ displayCount }}</span></f7-link>
       <span>{{ progress }}</span>
       <f7-link @click="next"><span>التالى</span><f7-icon f7="left"/></f7-link>
     </f7-toolbar>
@@ -45,6 +45,12 @@ export default {
     },
     remainingCount() {
       return this.currZekr.count - this.currCountDown;
+    },
+    displayCount() {
+      if (this.$store.state.isDownCounting)
+        return this.remainingCount
+      else
+        return this.currCountDown;
     }
   },
   methods: {
@@ -80,6 +86,12 @@ export default {
     },
     resetCount() {
       this.currCountDown = 0
+    },
+    incFont() {
+      this.$store.commit('fontSizeChanged', this.$store.getters.fontSize + 1)
+    },
+    decFont() {
+      this.$store.commit('fontSizeChanged', this.$store.getters.fontSize - 1)
     }
   }
 }

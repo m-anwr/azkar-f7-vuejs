@@ -20,10 +20,19 @@
 				  <div>
 	          <f7-label>اﻹهتزاز عند انتهاء العداد</f7-label>
 					</div>
-					<f7-checkbox
+					<f7-toggle
 					 :checked="this.$store.state.vibrateWhenZekrCounterFinishes"
            @change="vibrationToggled"
-					></f7-checkbox>
+					></f7-toggle>
+        </f7-list-item>
+        <f7-list-item>
+				  <div>
+	          <f7-label>العد تنازليا</f7-label>
+					</div>
+					<f7-toggle
+					 :checked="this.$store.state.isDownCounting"
+           @change="countDownToggled"
+					></f7-toggle>
         </f7-list-item>
       </f7-list>
     </f7-page>
@@ -47,6 +56,9 @@
      },
      vibrationToggled(e) {
        this.$store.commit('vibrationToggled', e.target.checked)
+     },
+     countDownToggled(e) {
+       this.$store.commit('countDownToggled', e.target.checked)
      }
    }
   };

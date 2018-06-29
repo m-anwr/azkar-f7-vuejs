@@ -11,7 +11,8 @@ export default new Vuex.Store({
       fontWeight: 'bold',
       fontFamily: '"Naskh","Hafs","Adobe Arabic","Simplified Arabic","Traditional Arabic","Arabic Typesetting","Times New Roman","Tahoma","Arial","serif"'
     },
-    vibrateWhenZekrCounterFinishes: true
+    vibrateWhenZekrCounterFinishes: true,
+    isDownCounting: true
   },
 
   getters: {
@@ -22,10 +23,16 @@ export default new Vuex.Store({
 
   mutations: {
     fontSizeChanged (state, size) {
+      if (size > 40 || size < 20)
+        return;
+
       state.arabicfont.fontSize = size + 'px'
     },
     vibrationToggled(state, checked) {
       state.vibrateWhenZekrCounterFinishes = checked
+    },
+    countDownToggled(state, checked) {
+      state.isDownCounting = checked
     },
     initialiseStore(state) {
 			// Check if the ID exists
